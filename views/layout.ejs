@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Candy App</title>
+    
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> 
+<!-- load fontawesome -->
+<link rel="stylesheet" type="text/css" href="stylesheets/main.css" /></head>
+<body>
+	 <%#- include( 'partials/candy/index', {candies: candies} ) %>
+	<div class="container">
+		<%#- include( 'partials/candy/form' )%>
+	</div>
+	<div class="jumbotron text-center">
+
+		<h1><span class=""></span>FACEBOOK LOGIN USING PASSPORT</h1>
+			<p>Login or Register with:</p>
+
+			<a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>
+			
+			<!-- if user exists show something, else allow login -->
+			<% if(user != undefined ) { %>
+				
+				<h2>Below is the data sent by Facebook</h2>
+				
+				<pre>
+
+				<%= user.fb %>
+
+				</pre>
+
+				<a href="/logout">Logout</a>
+
+			<% } else { %>
+
+				<a href="/auth/facebook">Login with Facebook</a>
+
+			<% } %>
+			
+	</div>
+
+
+</body>
+</html>
